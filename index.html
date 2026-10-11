@@ -1,21 +1,281 @@
-# ABATAGA — Website Les Privat SD
 
-Website statis satu halaman untuk ABATAGA (Alpha Betha Tetha Gamma).
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ABATAGA Les Privat SD: les home visit dan online untuk Kurikulum Nasional, Bilingual, Internasional, serta mengaji.">
+<title>ABATAGA | Les Privat SD & Mengaji</title>
+<style>
+:root{--navy:#17365d;--blue:#2864a8;--gold:#f4bf4f;--cream:#fffaf0;--ink:#263348;--muted:#637083;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+a{color:inherit}
+header{background:var(--white);padding:15px 6%;display:flex;justify-content:space-between;align-items:center;gap:16px;position:sticky;top:0;z-index:5;box-shadow:0 2px 14px #17365d12}
+.logo{font-weight:900;font-size:25px;color:var(--navy);letter-spacing:2px}
+.logo span{color:#d89b21}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-size:14px}
+nav a{text-decoration:none;font-weight:700}
+.hero{padding:76px 7%;background:linear-gradient(125deg,#eaf3ff,#fff8e8);display:grid;grid-template-columns:1.3fr .7fr;gap:35px;align-items:center}
+.eyebrow{font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.12;color:var(--navy);margin:12px 0}
+h2{font-size:clamp(26px,3vw,36px);color:var(--navy);line-height:1.2}
+h3{color:var(--navy)}
+.hero p{font-size:18px;max-width:600px;color:#526176}
+.hero-art{background:var(--navy);color:white;padding:32px;border-radius:28px;text-align:center;box-shadow:0 18px 40px #17365d24}
+.hero-art .emoji{font-size:70px}
+.hero-art h3{color:white;font-size:25px}
+.hero-art p{color:#e5edf9;font-size:15px}
+.btn{display:inline-block;background:var(--navy);color:white;padding:13px 21px;border-radius:10px;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.outline{background:white;color:var(--navy);border:1px solid #cbd7e8}
+section{padding:62px 7%}
+.section-intro{color:var(--muted);max-width:720px}
+.center{text-align:center}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.card{padding:23px;border:1px solid #e1e8f1;border-radius:17px;background:white;box-shadow:0 8px 22px #17365d08}
+.card .emoji{font-size:32px}
+.soft{background:#f6f9fd}
+.price-note{font-size:14px;color:var(--muted)}
+.calculator{max-width:760px;margin:25px auto 0;background:white;border:1px solid #dce5f0;border-radius:20px;padding:26px;box-shadow:0 12px 35px #17365d10}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+select,input{width:100%;padding:12px;border:1px solid #ccd6e3;border-radius:9px;font:inherit;background:white;color:var(--ink)}
+.result{margin-top:22px;padding:22px;background:var(--cream);border-radius:14px}
+.result .total{font-size:30px;color:var(--navy);font-weight:900}
+.result p{margin:5px 0}
+.badge{display:inline-block;background:#eaf3ff;color:var(--blue);padding:5px 10px;border-radius:20px;font-size:12px;font-weight:800}
+.price-table{width:100%;border-collapse:collapse;margin-top:20px;background:white;border-radius:12px;overflow:hidden}
+.price-table th,.price-table td{padding:12px;text-align:left;border-bottom:1px solid #e5eaf1}
+.price-table th{background:var(--navy);color:white}
+.price-table tr:last-child td{border-bottom:0}
+.price-table td:last-child{font-weight:700}
+.steps{counter-reset:step}
+.step{padding:16px 0 16px 55px;position:relative;border-bottom:1px solid #e4eaf2}
+.step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:14px;width:38px;height:38px;background:#eaf3ff;color:var(--navy);font-weight:900;border-radius:50%;display:grid;place-items:center}
+.cta{background:var(--navy);color:white;text-align:center}
+.cta h2{color:white}
+.cta p{color:#e0e9f6}
+footer{padding:28px 7%;background:#102744;color:#d9e4f4;font-size:13px;text-align:center}
+small{color:var(--muted)}
+@media(max-width:760px){header{align-items:flex-start;flex-direction:column}nav{gap:12px}.hero{grid-template-columns:1fr;padding-top:48px}.cards{grid-template-columns:1fr}.fields{grid-template-columns:1fr}section{padding:45px 6%}.calculator{padding:18px}.price-table{font-size:13px}.price-table th,.price-table td{padding:9px}}
+</style>
+</head>
+<body>
+<header>
+  <a href="#beranda" class="logo" style="text-decoration:none">ABA<span>TA</span>GA</a>
+  <nav>
+    <a href="#layanan">Layanan</a>
+    <a href="#harga">Daftar Harga</a>
+    <a href="#kalkulator">Kalkulator</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+</header>
 
-## Isi
-- Desain responsif untuk ponsel dan desktop
-- Paket les 60 menit (Rp120.000/pertemuan) dan 90 menit (Rp150.000/pertemuan)
-- Paket bulanan 4, 8, atau 12 pertemuan; pembayaran di awal bulan
-- Sistem home visit, Kurikulum Nasional untuk SD
-- Wilayah: Kota Bekasi, Kabupaten Bekasi, dan Jakarta Timur
-- Tombol WhatsApp menuju 6289603274414
+<main>
+<section class="hero" id="beranda">
+  <div>
+    <div class="eyebrow">Alpha Betha Tetha Gamma</div>
+    <h1>Belajar Lebih Nyaman, Bertumbuh Lebih Percaya Diri.</h1>
+    <p>Les privat SD dan bimbingan mengaji dengan pembelajaran personal, terarah, dan menyesuaikan kebutuhan setiap siswa.</p>
+    <p><span class="badge">Home Visit</span> <span class="badge">Online</span> <span class="badge">Kelas 1–6 SD</span></p>
+    <a class="btn" href="#kalkulator">Hitung Biaya Les</a>
+    <a class="btn outline" href="#layanan">Lihat Layanan</a>
+  </div>
+  <div class="hero-art">
+    <div class="emoji">📚 ✏️ 🌟</div>
+    <h3>Setiap Anak Punya Potensi</h3>
+    <p>Pendampingan belajar yang fokus pada kebutuhan, pemahaman, dan perkembangan anak.</p>
+  </div>
+</section>
 
-## Publikasi dengan GitHub Pages
-1. Buat repository baru bernama `abataga` di akun `fadiyasalwayusuf-code`.
-2. Pilih **Public** dan buat repository kosong (README boleh tidak dicentang).
-3. Unggah `index.html` ke root repository, lalu commit.
-4. Buka **Settings → Pages**.
-5. Pada **Build and deployment**, pilih **Deploy from a branch**, pilih branch `main` dan folder `/(root)`, lalu Save.
-6. Tunggu proses publikasi selesai. Alamat umumnya: `https://fadiyasalwayusuf-code.github.io/abataga/`.
+<section id="layanan">
+  <div class="center">
+    <div class="eyebrow">Layanan ABATAGA</div>
+    <h2>Pilih Pendampingan yang Sesuai</h2>
+    <p class="section-intro" style="margin:auto">Belajar di rumah bersama guru atau dari mana saja melalui kelas online.</p>
+  </div>
+  <div class="cards">
+    <article class="card"><div class="emoji">🏡</div><h3>Les Privat Home Visit</h3><p>Guru datang ke rumah siswa untuk pendampingan individual, sesuai wilayah layanan.</p></article>
+    <article class="card"><div class="emoji">💻</div><h3>Les Privat Online</h3><p>Pembelajaran jarak jauh yang praktis dan fleksibel untuk siswa SD.</p></article>
+    <article class="card"><div class="emoji">📖</div><h3>Bimbingan Mengaji</h3><p>Pilihan pembelajaran mengaji dalam bahasa Indonesia atau bahasa Inggris.</p></article>
+  </div>
+  <div class="cards">
+    <article class="card"><h3>🇮🇩 Kurikulum Nasional</h3><p>Pendampingan seluruh mata pelajaran SD sesuai kebutuhan siswa.</p></article>
+    <article class="card"><h3>🌐 National Plus / Bilingual</h3><p>Pendampingan materi dengan pendekatan bilingual sesuai kebutuhan belajar.</p></article>
+    <article class="card"><h3>🌍 Kurikulum Internasional</h3><p>Dukungan belajar untuk siswa SD dengan kurikulum internasional.</p></article>
+  </div>
+</section>
 
-Catatan: pengaturan Pages dan alamat publik harus dicek di GitHub setelah repository dibuat. Jika username atau nama repository berubah, URL juga berubah.
+<section id="kalkulator" class="soft">
+  <div class="center">
+    <div class="eyebrow">Perencanaan Belajar</div>
+    <h2>Kalkulator Biaya Les</h2>
+    <p class="section-intro" style="margin:auto">Pilih layanan dan durasi untuk memperkirakan biaya. Harga dihitung per siswa, per pertemuan.</p>
+  </div>
+  <div class="calculator">
+    <div class="fields">
+      <div><label for="jenis">Jenis layanan</label><select id="jenis"><option value="les">Les privat SD</option><option value="ngaji">Bimbingan mengaji</option></select></div>
+      <div><label for="mode">Metode belajar</label><select id="mode"><option value="online">Online</option><option value="home">Home visit</option></select></div>
+      <div id="kurikulum-wrap"><label for="kurikulum">Kurikulum</label><select id="kurikulum"><option value="nasional">Nasional</option><option value="bilingual">National Plus / Bilingual</option><option value="internasional">Internasional</option></select></div>
+      <div id="kelas-wrap"><label for="kelas">Jenjang kelas</label><select id="kelas"><option value="0">Kelas 1–2 SD</option><option value="1">Kelas 3–4 SD</option><option value="2">Kelas 5–6 SD</option></select></div>
+      <div id="bahasa-wrap" style="display:none"><label for="bahasa">Bahasa mengaji</label><select id="bahasa"><option value="id">Bahasa Indonesia</option><option value="en">Bahasa Inggris</option></select></div>
+      <div><label for="durasi">Durasi per pertemuan</label><select id="durasi"><option value="60">60 menit</option><option value="90">90 menit</option></select></div>
+      <div><label for="jumlah">Jumlah siswa</label><input id="jumlah" type="number" min="1" max="30" value="1"></div>
+      <div><label for="paket">Jumlah pertemuan</label><select id="paket"><option value="4">4 pertemuan</option><option value="8">8 pertemuan</option><option value="12">12 pertemuan (diskon 5%)</option></select></div>
+    </div>
+    <div class="result" aria-live="polite">
+      <span class="badge">Estimasi biaya</span>
+      <p>Biaya per pertemuan</p>
+      <div id="pertemuan" class="total">Rp90.000</div>
+      <p id="rincian">1 siswa · 60 menit</p>
+      <hr style="border:0;border-top:1px solid #e7dfce;margin:17px 0">
+      <p>Total sebelum diskon: <strong id="subtotal">Rp360.000</strong></p>
+      <p>Diskon paket: <strong id="diskon">Rp0</strong></p>
+      <p>Total estimasi paket:</p>
+      <div id="total" class="total">Rp360.000</div>
+      <small>Biaya akhir dan ketersediaan guru dikonfirmasi melalui WhatsApp.</small>
+      <p style="margin-top:18px"><a id="pesan" class="btn" href="https://wa.me/6289603274414" target="_blank" rel="noopener">Tanyakan Paket via WhatsApp</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="harga">
+  <div class="center">
+    <div class="eyebrow">Transparan dan Terencana</div>
+    <h2>Daftar Harga Les Privat SD</h2>
+    <p class="section-intro" style="margin:auto">Tarif dalam rupiah per siswa, per pertemuan. Gunakan kalkulator untuk menghitung paket sesuai kebutuhan.</p>
+  </div>
+  <h3>Home Visit</h3>
+  <div style="overflow-x:auto">
+  <table class="price-table">
+    <thead><tr><th>Kurikulum</th><th>Kelas 1–2</th><th>Kelas 3–4</th><th>Kelas 5–6</th></tr></thead>
+    <tbody>
+      <tr><td>Nasional · 60 menit</td><td>Rp110.000</td><td>Rp120.000</td><td>Rp130.000</td></tr>
+      <tr><td>Nasional · 90 menit</td><td>Rp140.000</td><td>Rp150.000</td><td>Rp160.000</td></tr>
+      <tr><td>Bilingual · 60 menit</td><td>Rp130.000</td><td>Rp140.000</td><td>Rp150.000</td></tr>
+      <tr><td>Bilingual · 90 menit</td><td>Rp160.000</td><td>Rp170.000</td><td>Rp180.000</td></tr>
+      <tr><td>Internasional · 60 menit</td><td>Rp150.000</td><td>Rp160.000</td><td>Rp170.000</td></tr>
+      <tr><td>Internasional · 90 menit</td><td>Rp180.000</td><td>Rp190.000</td><td>Rp200.000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>Online</h3>
+  <div style="overflow-x:auto">
+  <table class="price-table">
+    <thead><tr><th>Kurikulum</th><th>Kelas 1–2</th><th>Kelas 3–4</th><th>Kelas 5–6</th></tr></thead>
+    <tbody>
+      <tr><td>Nasional · 60 menit</td><td>Rp90.000</td><td>Rp100.000</td><td>Rp110.000</td></tr>
+      <tr><td>Nasional · 90 menit</td><td>Rp120.000</td><td>Rp130.000</td><td>Rp140.000</td></tr>
+      <tr><td>Bilingual · 60 menit</td><td>Rp100.000</td><td>Rp110.000</td><td>Rp120.000</td></tr>
+      <tr><td>Bilingual · 90 menit</td><td>Rp130.000</td><td>Rp140.000</td><td>Rp150.000</td></tr>
+      <tr><td>Internasional · 60 menit</td><td>Rp120.000</td><td>Rp130.000</td><td>Rp140.000</td></tr>
+      <tr><td>Internasional · 90 menit</td><td>Rp150.000</td><td>Rp160.000</td><td>Rp170.000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>Bimbingan Mengaji</h3>
+  <div style="overflow-x:auto">
+  <table class="price-table">
+    <thead><tr><th>Metode</th><th>Bahasa Indonesia · 60 / 90 menit</th><th>Bahasa Inggris · 60 / 90 menit</th></tr></thead>
+    <tbody>
+      <tr><td>Online</td><td>Rp95.000 / Rp125.000</td><td>Rp125.000 / Rp155.000</td></tr>
+      <tr><td>Home visit</td><td>Rp135.000 / Rp165.000</td><td>Rp165.000 / Rp195.000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="price-note">Paket 12 pertemuan mendapatkan diskon 5%. Biaya untuk beberapa siswa dihitung berdasarkan jumlah siswa. Tarif home visit dapat dikonfirmasi kembali berdasarkan lokasi.</p>
+</section>
+
+<section class="soft" id="cara">
+  <div class="center"><h2>Cara Memulai Les</h2><p class="section-intro" style="margin:auto">Proses sederhana untuk merencanakan pendampingan belajar.</p></div>
+  <div style="max-width:700px;margin:25px auto" class="steps">
+    <div class="step"><strong>Pilih layanan</strong><br>Tentukan jenis bimbingan, metode, dan durasi belajar.</div>
+    <div class="step"><strong>Hubungi ABATAGA</strong><br>Kirim pilihan paket melalui WhatsApp untuk konsultasi.</div>
+    <div class="step"><strong>Konfirmasi jadwal dan guru</strong><br>Detail layanan, ketersediaan guru, dan biaya akhir dikonfirmasi.</div>
+    <div class="step"><strong>Konfirmasi pembayaran</strong><br>Pembayaran dilakukan di muka, satu minggu sebelum kelas dimulai.</div>
+  </div>
+</section>
+
+<section id="wilayah">
+  <div class="center">
+    <div class="eyebrow">Area Layanan</div>
+    <h2>Belajar di Area Anda</h2>
+    <div class="cards">
+      <article class="card"><div class="emoji">📍</div><h3>Kota Bekasi</h3><p>Layanan home visit sesuai ketersediaan guru.</p></article>
+      <article class="card"><div class="emoji">🏘️</div><h3>Kabupaten Bekasi</h3><p>Konfirmasi jangkauan dan jadwal melalui WhatsApp.</p></article>
+      <article class="card"><div class="emoji">🌆</div><h3>Jakarta Timur</h3><p>Pendampingan home visit di area layanan yang tersedia.</p></article>
+    </div>
+    <p>Les online tersedia dengan jangkauan yang lebih luas.</p>
+  </div>
+</section>
+
+<section class="cta" id="kontak">
+  <div class="eyebrow" style="color:var(--gold)">Mari Mulai Belajar</div>
+  <h2>Temukan Paket Belajar yang Tepat</h2>
+  <p>Hubungi Ms Fadiya Salwa untuk konsultasi layanan, harga, dan jadwal.</p>
+  <p><strong>WhatsApp: 0896-0327-4414</strong></p>
+  <a class="btn gold" href="https://wa.me/6289603274414?text=Halo%20ABATAGA%2C%20saya%20ingin%20bertanya%20tentang%20les%20privat." target="_blank" rel="noopener">Hubungi via WhatsApp</a>
+</section>
+</main>
+
+<footer>
+  <strong>ABATAGA — Alpha Betha Tetha Gamma</strong><br>
+  Les Privat SD & Bimbingan Mengaji · Home Visit & Online<br>
+  © <span id="tahun"></span> ABATAGA. Semua hak dilindungi.
+</footer>
+
+<script>
+const harga={
+ online:{
+  nasional:[[90000,120000],[100000,130000],[110000,140000]],
+  bilingual:[[100000,130000],[110000,140000],[120000,150000]],
+  internasional:[[120000,150000],[130000,160000],[140000,170000]]
+ },
+ home:{
+  nasional:[[110000,140000],[120000,150000],[130000,160000]],
+  bilingual:[[130000,160000],[140000,170000],[150000,180000]],
+  internasional:[[150000,180000],[160000,190000],[170000,200000]]
+ }
+};
+const hargaNgaji={
+ online:{id:[95000,125000],en:[125000,155000]},
+ home:{id:[135000,165000],en:[165000,195000]}
+};
+const rupiah=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
+const el=id=>document.getElementById(id);
+function hitung(){
+ const jenis=el("jenis").value,mode=el("mode").value,durasi=Number(el("durasi").value);
+ const jumlah=Math.max(1,Math.min(30,parseInt(el("jumlah").value)||1));
+ const paket=Number(el("paket").value);
+ el("jumlah").value=jumlah;
+ el("kurikulum-wrap").style.display=jenis==="les"?"":"none";
+ el("kelas-wrap").style.display=jenis==="les"?"":"none";
+ el("bahasa-wrap").style.display=jenis==="ngaji"?"":"none";
+ let satuan,deskripsi;
+ if(jenis==="les"){
+  const kur=el("kurikulum").value,kelas=Number(el("kelas").value);
+  satuan=harga[mode][kur][kelas][durasi===60?0:1];
+  deskripsi=el("kurikulum").selectedOptions[0].text+" · "+el("kelas").selectedOptions[0].text;
+ }else{
+  const bahasa=el("bahasa").value;
+  satuan=hargaNgaji[mode][bahasa][durasi===60?0:1];
+  deskripsi="Mengaji · Bahasa "+(bahasa==="id"?"Indonesia":"Inggris");
+ }
+ const per=satuan*jumlah,subtotal=per*paket,diskon=paket===12?Math.round(subtotal*.05):0,total=subtotal-diskon;
+ el("pertemuan").textContent=rupiah(per);
+ el("rincian").textContent=jumlah+" siswa · "+durasi+" menit per pertemuan";
+ el("subtotal").textContent=rupiah(subtotal);
+ el("diskon").textContent=rupiah(diskon);
+ el("total").textContent=rupiah(total);
+ const metode=mode==="home"?"Home visit":"Online";
+ const pesan=`Halo ABATAGA, saya ingin konsultasi paket les.\nLayanan: ${jenis==="les"?"Les privat SD":"Bimbingan mengaji"}\nMetode: ${metode}\nPilihan: ${deskripsi}\nDurasi: ${durasi} menit\nJumlah siswa: ${jumlah}\nPaket: ${paket} pertemuan\nEstimasi total: ${rupiah(total)}\nMohon informasi jadwal dan ketersediaan guru.`;
+ el("pesan").href="https://wa.me/6289603274414?text="+encodeURIComponent(pesan);
+}
+["jenis","mode","durasi","jumlah","paket","kurikulum","kelas","bahasa"].forEach(id=>el(id).addEventListener("change",hitung));
+el("tahun").textContent=new Date().getFullYear();
+hitung();
+</script>
+</body>
+</html>
